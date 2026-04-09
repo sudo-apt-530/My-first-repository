@@ -1,10 +1,11 @@
 class itemName {
-  itemName(this.en, this.ru, this.es, this.ge);
+  itemName(this.en, this.ru, this.es, this.ge, this.fr);
 
   final String en;
   final String ru;
   final String es;
   final String ge;
+  final String fr;
 
   static String lan = "en";
 
@@ -16,6 +17,8 @@ class itemName {
         return this.es;
       case "ge":
         return this.ge;
+      case "fr":
+        return this.fr;
       default:
         return this.en;
     }
@@ -23,7 +26,7 @@ class itemName {
 }
 
 void main() {
-  final loop = itemName("loop", "цикл", "bucle", "ციკლი");
+  final loop = itemName("loop", "цикл", "bucle", "ციკლი", "boucle");
 
   print(loop.localization);
   itemName.lan = "ru";
@@ -31,5 +34,7 @@ void main() {
   itemName.lan = "es";
   print(loop.localization);
   itemName.lan = "ge";
+  print(loop.localization);
+  itemName.lan = "fr";
   print(loop.localization);
 }
