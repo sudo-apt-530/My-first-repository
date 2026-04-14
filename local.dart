@@ -1,6 +1,8 @@
 class itemName {
+  // параметры
   itemName(this.en, this.ru, this.es, this.ge, this.fr, this.gr);
 
+  // переменные для парметров
   final String en;
   final String ru;
   final String es;
@@ -8,8 +10,10 @@ class itemName {
   final String fr;
   final String gr;
 
+  // переменная что-бы сразу менять язык во всём приложении
   static String lan = "en";
 
+  // getter для возврощения слова на языке который можно менять с помощью lan переменной
   String get localization {
     switch (lan) {
       case "ru":
@@ -31,7 +35,9 @@ class itemName {
 void main() {
   final loop = itemName("loop", "цикл", "bucle", "ციკლი", "boucle", "Schleife");
 
+  // получаем слово на языке
   print(loop.localization);
+  // меняем язык так
   itemName.lan = "ru";
   print(loop.localization);
   itemName.lan = "es";
